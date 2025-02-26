@@ -119,11 +119,7 @@ function CompanyData() {
     "Founding Year",
     "Number of Employees",
   ];
-  const financialInfo = [
-    "Funding Raised ($)",
-    "Revenue ($, if available )",
-    "Company Valuation ($, if available)",
-  ];
+  const financialInfo = ["Funding Raised", "Revenue", "Valuation"];
   const tradingInfo = [
     "Trading Strategies Used",
     "Assets Traded",
@@ -388,20 +384,18 @@ function CompanyData() {
                           </span>
                           <span className="text-white">
                             {key === "Founders & LinkedIn URLs" &&
-                            company[key].includes("LinkedIn:")
-                              ? (
-                                <div
-                                  dangerouslySetInnerHTML={{
-                                    __html: company[key].replace(
-                                      /(https:\/\/www\.linkedin\.com\/[^\s,]+)/g,
-                                      '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition-colors hover:underline">LinkedIn Profile</a>'
-                                    ),
-                                  }}
-                                />
-                              )
-                              : (
-                                company[key]
-                              )}
+                            company[key].includes("LinkedIn:") ? (
+                              <div
+                                dangerouslySetInnerHTML={{
+                                  __html: company[key].replace(
+                                    /(https:\/\/www\.linkedin\.com\/[^\s,]+)/g,
+                                    '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition-colors hover:underline">LinkedIn Profile</a>'
+                                  ),
+                                }}
+                              />
+                            ) : (
+                              company[key]
+                            )}
                           </span>
                         </div>
                       )

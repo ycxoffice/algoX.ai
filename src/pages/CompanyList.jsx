@@ -14,7 +14,7 @@ import {
   Activity,
   Tag,
   Info,
-  ShoppingBag,  
+  ShoppingBag,
 } from "lucide-react";
 
 function CompanyList() {
@@ -119,16 +119,16 @@ function CompanyList() {
     <div className="min-h-screen bg-white/80 text-white bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/80 via-white/80 to-purple/400">
       {/* Header */}
       <nav className="py-8 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-lg transform rotate-45"></div>
-            <h1 className="text-2xl font-bold">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
-                AlgoX
-              </span>
-              <span className="text-gray-400">.ai</span>
-            </h1>
-          </div>
-        </nav>
+        <div className="flex items-center space-x-3">
+          <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-lg transform rotate-45"></div>
+          <h1 className="text-2xl font-bold">
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+              AlgoX
+            </span>
+            <span className="text-gray-400">.ai</span>
+          </h1>
+        </div>
+      </nav>
 
       {/* Hero Section with Gradient */}
       <div className="relative overflow-hidden py-24">
@@ -147,14 +147,14 @@ function CompanyList() {
                       : "translate-y-10 opacity-0"
                   }`}
                 >
-                  <h1 className="text-5xl md:text-7xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
-                    Redefining Luxury
+                  <h1 className="text-5xl md:text-7xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-600">
+                    Revolutionizing Algorithms
                     <br />
-                    Through AI
+                    With AI Precision
                   </h1>
                   <p className="text-xl text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-                    Experience the future of fashion with AI-powered
-                    personalization and sustainable luxury handbags.
+                    Unlock the power of AI-driven optimization and cutting-edge
+                    algorithmic solutions.
                   </p>
                 </div>
               </div>
@@ -206,75 +206,10 @@ function CompanyList() {
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <button
-                      onClick={() => setShowFilters(!showFilters)}
-                      className="flex items-center text-gray-400 hover:text-green-500 text-sm font-medium transition-colors"
-                    >
-                      <Filter className="h-4 w-4 mr-1" />
-                      Filters
-                      <ChevronDown
-                        className={`h-4 w-4 ml-1 transition-transform ${
-                          showFilters ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-
                     <div className="text-gray-500 text-sm">
                       {filteredCompanies.length} companies found
                     </div>
                   </div>
-
-                  {showFilters && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 border-t border-gray-800 pt-4 animate-fadeIn">
-                      <div className="relative">
-                        <label className="block text-sm font-medium text-gray-400 mb-1">
-                          Exchange
-                        </label>
-                        <div className="relative">
-                          <select
-                            className="w-full pl-3 pr-10 py-2 bg-gray-800 border border-gray-700 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-green-500 text-white"
-                            value={selectedExchange}
-                            onChange={(e) =>
-                              setSelectedExchange(e.target.value)
-                            }
-                          >
-                            <option value="">All Exchanges</option>
-                            {exchanges.map((exchange, idx) => (
-                              <option key={idx} value={exchange}>
-                                {exchange}
-                              </option>
-                            ))}
-                          </select>
-                          <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                            <ChevronDown className="h-4 w-4 text-gray-400" />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="relative">
-                        <label className="block text-sm font-medium text-gray-400 mb-1">
-                          Sector
-                        </label>
-                        <div className="relative">
-                          <select
-                            className="w-full pl-3 pr-10 py-2 bg-gray-800 border border-gray-700 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-green-500 text-white"
-                            value={selectedSector}
-                            onChange={(e) => setSelectedSector(e.target.value)}
-                          >
-                            <option value="">All Sectors</option>
-                            {sectors.map((sector, idx) => (
-                              <option key={idx} value={sector}>
-                                {sector}
-                              </option>
-                            ))}
-                          </select>
-                          <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                            <ChevronDown className="h-4 w-4 text-gray-400" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
@@ -419,8 +354,8 @@ function CompanyList() {
                       <div>
                         <p className="text-xs text-gray-400">Valuation</p>
                         <p className="text-sm font-medium bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
-                          {company["Company Valuation"]
-                            ? `${company["Company Valuation"]}`
+                          {company["Valuation"]
+                            ? `${company["Valuation"]}`
                             : "N/A"}
                         </p>
                       </div>
