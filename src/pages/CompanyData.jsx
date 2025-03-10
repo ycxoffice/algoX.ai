@@ -87,7 +87,7 @@ function CompanyData() {
               We couldn't find the company you're looking for.
             </p>
             <Link
-              to="/"
+              to="/companies"
               className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-800 text-white hover:from-emerald-500 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-700/30"
             >
               <svg
@@ -383,19 +383,29 @@ function CompanyData() {
                             {key}
                           </span>
                           <span className="text-white">
-                            {key === "Founders & LinkedIn URLs" &&
-                            company[key].includes("LinkedIn:") ? (
-                              <div
-                                dangerouslySetInnerHTML={{
-                                  __html: company[key].replace(
-                                    /(https:\/\/www\.linkedin\.com\/[^\s,]+)/g,
-                                    '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition-colors hover:underline">LinkedIn Profile</a>'
-                                  ),
-                                }}
-                              />
-                            ) : (
-                              company[key]
-                            )}
+                            <div className="space-y-2">
+                              {company[key]
+                                .split(/([,\s]+)/) // Split by commas or whitespace, keeping delimiters
+                                .map((part, index) => {
+                                  const urlMatch =
+                                    part.match(/(https?:\/\/[^\s,]+)/);
+                                  if (urlMatch) {
+                                    const url = urlMatch[0];
+                                    return (
+                                      <a
+                                        key={index}
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-emerald-400 hover:text-emerald-300 transition-colors hover:underline"
+                                      >
+                                        {url}
+                                      </a>
+                                    );
+                                  }
+                                  return <span key={index}>{part}</span>;
+                                })}
+                            </div>
                           </span>
                         </div>
                       )

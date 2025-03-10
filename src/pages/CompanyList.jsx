@@ -116,7 +116,8 @@ function CompanyList() {
     );
 
   return (
-    <div className="min-h-screen bg-white/80 text-white bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/80 via-white/80 to-purple/400">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900/80 text-white">
+      {" "}
       {/* Header */}
       <nav className="py-8 flex justify-between items-center">
         <div className="flex items-center space-x-3">
@@ -129,7 +130,6 @@ function CompanyList() {
           </h1>
         </div>
       </nav>
-
       {/* Hero Section with Gradient */}
       <div className="relative overflow-hidden py-24">
         <div className="absolute inset-0 bg-[url('/api/placeholder/1000/1000')] opacity-5 bg-fixed"></div>
@@ -216,7 +216,6 @@ function CompanyList() {
           </div>
         </div>
       </div>
-
       {/* Company Cards */}
       <div className="container mx-auto px-4 py-8 relative">
         <div className="flex items-center justify-between mb-8">
@@ -316,11 +315,11 @@ function CompanyList() {
                   <div className="p-6 border-b border-gray-700">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h2 className="text-xl font-bold group-hover:bg-clip-text text-gray-700 truncate group-hover:bg-gradient-to-r from-purple-600 to-pink-600 transition-colors">
+                        <h2 className="text-xl font-bold group-hover:bg-clip-text text-white truncate group-hover:bg-gradient-to-r from-purple-600 to-pink-600 transition-colors">
                           {company["Company Name"]}
                         </h2>
                         <div className="flex items-center mt-1 gap-2">
-                          <div className="bg-gray-700 text-xs py-0.5 px-2 rounded text-gray-300 flex items-center">
+                          <div className="bg-gray-700 text-xs py-0.5 px-2 rounded ttext-white flex items-center">
                             <Tag className="h-3 w-3 mr-1" />
                             {company["Industry"] || "N/A"}
                           </div>
@@ -336,7 +335,7 @@ function CompanyList() {
 
                   <div className="p-6 space-y-4">
                     <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-lg bg-gray-700 flex items-center justify-center text-gray-300 mr-3">
+                      <div className="w-8 h-8 rounded-lg bg-gray-700 flex items-center justify-center text-white mr-3">
                         <Building className="h-4 w-4" />
                       </div>
                       <div>
@@ -348,7 +347,7 @@ function CompanyList() {
                     </div>
 
                     <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-lg bg-gray-700 flex items-center justify-center text-gray-300 mr-3">
+                      <div className="w-8 h-8 rounded-lg bg-gray-700 flex items-center justify-center text-white mr-3">
                         <DollarSign className="h-4 w-4" />
                       </div>
                       <div>
@@ -362,7 +361,7 @@ function CompanyList() {
                     </div>
 
                     <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-lg bg-gray-700 flex items-center justify-center text-gray-300 mr-3">
+                      <div className="w-8 h-8 rounded-lg bg-gray-700 flex items-center justify-center text-white mr-3">
                         <Globe className="h-4 w-4" />
                       </div>
                       <div>
@@ -416,141 +415,6 @@ function CompanyList() {
             ))}
           </div>
         )}
-      </div>
-
-      {/* Features Section */}
-      <div className="py-20 mt-12 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/api/placeholder/1000/1000')] opacity-5 bg-fixed"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-green-500 rounded-full filter blur-[150px] opacity-10"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500 rounded-full filter blur-[150px] opacity-5"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-green-500/10 border border-green-500/20 px-3 py-1 rounded-full bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 text-xs font-medium mb-4">
-              <BarChart2 className="h-3 w-3 mr-1" />
-              AI-Powered Analysis
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-              Small Cap, Big Data
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Our proprietary algorithms analyze thousands of data points to
-              identify high-potential small cap companies before they hit the
-              mainstream.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-white-800 to-white-400 p-8 rounded-xl border border-purple-700 backdrop-blur-sm relative group hover:border-purple-500/50 transition-all">
-              {/* <div className="absolute top-0 right-0 w-24 h-24 bg-green-500 rounded-full filter blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity"></div> */}
-
-              <div className="bg-gray-700 p-3 rounded-lg inline-flex mb-6 group-hover:bg-gradient-to-r from-purple-600 to-pink-600 group-hover:text-black transition-colors">
-                <AlertTriangle className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl text-gray-700 font-bold mb-4 group-hover:text-purple-400 transition-colors">
-                Market Analytics
-              </h3>
-              <p className="text-gray-400">
-                Real-time valuation tracking and market performance metrics to
-                keep you informed of every market movement.
-              </p>
-              <div className="mt-6 pt-6 border-t border-gray-700">
-                <a
-                  href="#"
-                  className="text-sm bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 hover:text-green-300 flex items-center"
-                >
-                  Learn more
-                  <svg
-                    className="ml-1 w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-white-800 to-white-400 p-8 rounded-xl border border-purple-700 backdrop-blur-sm relative group hover:border-purple-500/50 transition-all">
-              {/* <div className="absolute top-0 right-0 w-24 h-24 bg-green-500 rounded-full filter blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity"></div> */}
-
-              <div className="bg-gray-700 p-3 rounded-lg inline-flex mb-6 group-hover:bg-gradient-to-r from-purple-600 to-pink-600 group-hover:text-black transition-colors">
-                <AlertTriangle className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl text-gray-700 font-bold mb-4 group-hover:text-purple-400 transition-colors">
-                Growth Score
-              </h3>
-              <p className="text-gray-400">
-                Proprietary AI-driven growth potential scoring system that
-                predicts future market performance with remarkable accuracy.
-              </p>
-              <div className="mt-6 pt-6 border-t border-gray-700">
-                <a
-                  href="#"
-                  className="text-sm bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 hover:text-green-300 flex items-center"
-                >
-                  Learn more
-                  <svg
-                    className="ml-1 w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-white-800 to-white-400 p-8 rounded-xl border border-purple-700 backdrop-blur-sm relative group hover:border-purple-500/50 transition-all">
-              {/* <div className="absolute top-0 right-0 w-24 h-24 bg-green-500 rounded-full filter blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity"></div> */}
-
-              <div className="bg-gray-700 p-3 rounded-lg inline-flex mb-6 group-hover:bg-gradient-to-r from-purple-600 to-pink-600 group-hover:text-black transition-colors">
-                <AlertTriangle className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl text-gray-700 font-bold mb-4 group-hover:text-purple-400 transition-colors">
-                Risk Assessment
-              </h3>
-              <p className="text-gray-400">
-                Comprehensive risk level evaluation and volatility metrics to
-                help you make informed investment decisions.
-              </p>
-              <div className="mt-6 pt-6 border-t border-gray-700">
-                <a
-                  href="#"
-                  className="text-sm bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 hover:text-green-300 flex items-center"
-                >
-                  Learn more
-                  <svg
-                    className="ml-1 w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
